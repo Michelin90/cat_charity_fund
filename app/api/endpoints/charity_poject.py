@@ -9,9 +9,11 @@ from app.api.validators import (check_charity_project_exists,
 from app.core.db import get_async_session
 from app.core.user import current_superuser
 from app.managers.charity_poject import charity_project_crud
+from app.models.donation import Donation
 from app.schemas.charity_project import (CharityProjectCreate,
                                          CharityProjectDB,
                                          CharityProjectUpdate)
+from app.services.investment import make_investment
 
 router = APIRouter(
     prefix='/charity_project',
@@ -29,12 +31,19 @@ async def create_charity_project(
     charity_project: CharityProjectCreate,
     session: AsyncSession = Depends(get_async_session)
 ):
-    """Только для суперюзеров."""
+    """Создает благотворительный проект.
+
+    Только для суперюзеров.
+
+    """
     await check_charity_project_name_is_not_unique(
         charity_project.name, session
     )
     new_charity_project = await charity_project_crud.create(
         charity_project, session
+    )
+    new_charity_project = await make_investment(
+        new_charity_project, Donation, session
     )
     return new_charity_project
 
@@ -47,6 +56,11 @@ async def create_charity_project(
 async def get_all_charity_projects(
     session: AsyncSession = Depends(get_async_session)
 ):
+    """Получает список всех благотворительных проектов.
+
+    Только для суперюзеров.
+
+    """
     charity_projects = await charity_project_crud.get_multi(session)
     return charity_projects
 
@@ -61,6 +75,12 @@ async def update_charity_project(
     obj_in: CharityProjectUpdate,
     session: AsyncSession = Depends(get_async_session)
 ):
+    """Обновляет объект благотворительного проекта.
+
+    Только для суперюзеров. Закрытый проект нельзя редактировать,
+    также нельзя установить требуемую сумму меньше уже вложенной.
+
+    """
     charity_project = await check_charity_project_exists(project_id, session)
     check_charity_project_is_closed(charity_project.fully_invested)
     if obj_in.name is not None:
@@ -87,6 +107,12 @@ async def delete_charity_project(
     project_id: int,
     session: AsyncSession = Depends(get_async_session)
 ):
+    """Удаляет объект благотворительного проекта.
+
+    Только для суперюзеров.  Нельзя удалить проект, в который уже
+    были инвестированы средства, его можно только закрыть.
+
+    """
     charity_project = await check_charity_project_exists(project_id, session)
     check_charity_project_is_invested(charity_project.invested_amount)
     charity_project = await charity_project_crud.remove(
