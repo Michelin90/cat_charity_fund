@@ -16,7 +16,7 @@ async def check_charity_project_name_is_not_unique(
             session
         )
     )
-    if charity_project is not None:
+    if not charity_project:
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,
             detail='Проект с таким именем уже существует!'
@@ -29,7 +29,7 @@ async def check_charity_project_exists(
     charity_project = await charity_project_crud.get(
         poject_id, session
     )
-    if charity_project is None:
+    if not charity_project:
         raise HTTPException(
             status_code=HTTPStatus.NOT_FOUND,
             detail='Проект не найден!'
