@@ -16,7 +16,7 @@ async def check_charity_project_name_is_not_unique(
             session
         )
     )
-    if not charity_project:
+    if charity_project:
         raise HTTPException(
             status_code=HTTPStatus.BAD_REQUEST,
             detail='Проект с таким именем уже существует!'
