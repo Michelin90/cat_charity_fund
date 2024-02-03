@@ -1,3 +1,4 @@
+![example workflow](https://github.com/Michelin90/foodgram-project-react/actions/workflows/main.yml/badge.svg)
 # Cat_charity_fund
 ## Описание
 Фонд собирает пожертвования на различные целевые проекты, связанные с поддержкой кошачьей популяции.
