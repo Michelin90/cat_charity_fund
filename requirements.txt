@@ -39,7 +39,7 @@ packaging==21.3; python_version >= '3.6'
 passlib[bcrypt]==1.7.4
 pluggy==1.0.0
 py==1.11.0
-pycodestyle==2.8.0
+pycodestyle==2.11.0
 pycparser==2.21
 pydantic==1.9.1
 pyflakes==2.4.0
