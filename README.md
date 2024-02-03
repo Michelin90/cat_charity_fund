@@ -26,7 +26,11 @@ source env/bin/activate
 python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
-
+Создать в корневой папке файл .env и добавить в него следующие строки:
+```
+DATABASE_URL=sqlite+aiosqlite:///./fastapi.db
+SECRET=<строка, на основе которой будет генерироваться токен для пользователя>
+```
 Выполнить миграции:
 ```
 alembic upgrade head
