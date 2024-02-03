@@ -33,7 +33,7 @@ iniconfig==1.1.1
 makefun==1.13.1
 mako==1.2.0
 markupsafe==2.1.1
-mccabe==0.6.1
+mccabe>=0.7.0,<0.8.0
 mixer==7.2.2
 packaging==21.3; python_version >= '3.6'
 passlib[bcrypt]==1.7.4
