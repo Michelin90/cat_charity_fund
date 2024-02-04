@@ -1,11 +1,5 @@
 ![example workflow](https://github.com/Michelin90/cat_charity_fund/actions/workflows/main.yml/badge.svg)
 # Cat_charity_fund
-## Язык и инструменты:
-[![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)](https://www.python.org/)
-[![FastApi](https://img.shields.io/badge/FastAPI-0.78-blue?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
-[![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-1.4-blue?style=for-the-badge&logo=SQLAlchemy)](https://www.sqlalchemy.org/)
-![Pydantic](https://img.shields.io/badge/Pydantic-1.9-blue?style=for-the-badge&logo=Pydantic)
-
 ## Описание
 Фонд собирает пожертвования на различные целевые проекты, связанные с поддержкой кошачьей популяции.
 ### Проекты
@@ -17,6 +11,13 @@
 Целевые проекты создаются администраторами сайта. 
 Любой пользователь может видеть список всех проектов, включая требуемые и уже внесенные суммы. Это касается всех проектов — и открытых, и закрытых.
 Зарегистрированные пользователи могут отправлять пожертвования и просматривать список своих пожертвований.
+## Язык и инструменты:
+[![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)](https://www.python.org/)
+[![FastApi](https://img.shields.io/badge/FastAPI-0.78-blue?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-1.4-blue?style=for-the-badge&logo=SQLAlchemy)](https://www.sqlalchemy.org/)
+![Pydantic](https://img.shields.io/badge/Pydantic-1.9-blue?style=for-the-badge&logo=Pydantic)
+## Автор:
+Михаил [Michelin90](https://github.com/Michelin90) Хохлов
 ## Как запустить проект:
 Клонировать репозиторий и перейти в него в командной строке:
 ```
