@@ -1,4 +1,4 @@
-![example workflow](https://github.com/Michelin90/foodgram-project-react/actions/workflows/main.yml/badge.svg)
+![example workflow](https://github.com/Michelin90/cat_charity_fund/actions/workflows/main.yml/badge.svg)
 # Cat_charity_fund
 ## Язык и инструменты:
 [![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)](https://www.python.org/)
