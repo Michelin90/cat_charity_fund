@@ -1,5 +1,11 @@
 ![example workflow](https://github.com/Michelin90/foodgram-project-react/actions/workflows/main.yml/badge.svg)
 # Cat_charity_fund
+## Язык и инструменты:
+[![Python](https://img.shields.io/badge/Python-3.10-blue?style=for-the-badge&logo=python)](https://www.python.org/)
+[![FastApi](https://img.shields.io/badge/FastAPI-0.78-blue?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
+[![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-1.4-blue?style=for-the-badge&logo=SQLAlchemy)](https://www.sqlalchemy.org/)
+![Pydantic](https://img.shields.io/badge/Pydantic-1.9-blue?style=for-the-badge&logo=Pydantic)
+
 ## Описание
 Фонд собирает пожертвования на различные целевые проекты, связанные с поддержкой кошачьей популяции.
 ### Проекты
